@@ -15,26 +15,8 @@ int main(void) {
    /* Obter rank (id) do processo */
    MPI_Comm_rank(MPI_COMM_WORLD, &my_rank); 
 
-   
-   char *res;
-   switch(my_rank){
-      case 0:
-         res = "João";
-         break;
-      case 1:
-         res = "Maria";
-         break;
-      case 2:
-         res = "Pedro";
-         break;
-      case 3:
-         res = "Marta";
-         break;
-      default:
-         res ="Outro";
-         break;
-   }
-printf("Número de processos: %d Rank do processos corrente: %d Nome: %s \n", comm_sz, my_rank, res);
+   printf("Número de processos: %d Rank do processos corrente: %d \n", comm_sz, my_rank);
+
    /* Encerra MPI */
    MPI_Finalize(); 
 
